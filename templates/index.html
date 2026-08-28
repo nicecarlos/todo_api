@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1>Minhas Tarefas</h1>
+            <p>Gerencie suas atividades diárias com facilidade</p>
+        </header>
+
+        <section class="card form-section">
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="title">Título *</label>
+                    <input type="text" id="title" placeholder="Ex: Estudar Flask" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descrição</label>
+                    <textarea id="description" rows="2" placeholder="Detalhes da tarefa..."></textarea>
+                </div>
+                <button type="submit" id="btn-add" class="btn btn-primary">Adicionar Tarefa</button>
+            </form>
+        </section>
+
+        <section class="card list-section">
+            <h2>Lista de Tarefas</h2>
+            <ul id="task-list" class="task-list">
+                <!-- Tarefas inseridas dinamicamente via JavaScript -->
+            </ul>
+        </section>
+    </div>
+
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <h3>Excluir tarefa</h3>
+            <p>Deseja realmente excluir esta tarefa?</p>
+
+            <div class="modal-actions">
+                <button id="confirm-no" class="btn btn-cancel">Cancelar</button>
+                <button id="confirm-yes" class="btn btn-delete">Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</body>
+</html>
