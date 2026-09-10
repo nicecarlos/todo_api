@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - Gerenciador de Tarefas</title>
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}"
+>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ==========================
+     LOGIN
+=========================== -->
+
+<section id="login-section">
+
+    <header class="app-header">
+
+        <h1>Gerenciador de Tarefas</h1>
+
+        <p>
+            Entre na sua conta para continuar
+        </p>
+
+    </header>
+
+
+    <section class="card">
+
+        <form id="login-form">
+
+            <div class="form-group">
+
+                <label for="login-email">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="login-email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="login-password">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="login-password"
+                    placeholder="Digite sua senha"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary"
+            >
+                Entrar
+            </button>
+
+        </form>
+
+
+        <p class="auth-link">
+
+            Ainda não possui uma conta?
+
+            <a
+                href="#"
+                id="show-register"
+            >
+                Criar conta
+            </a>
+
+        </p>
+
+    </section>
+
+</section>
+
+
+<!-- ==========================
+     CADASTRO
+=========================== -->
+
+<section
+    id="register-section"
+    style="display: none;"
+>
+
+    <header class="app-header">
+
+        <h1>Criar conta</h1>
+
+        <p>
+            Cadastre-se para começar
+        </p>
+
+    </header>
+
+
+    <section class="card">
+
+        <form id="register-form">
+
+            <div class="form-group">
+
+                <label for="register-name">
+                    Nome
+                </label>
+
+                <input
+                    type="text"
+                    id="register-name"
+                    placeholder="Digite seu nome"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="register-email">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="register-email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="register-password">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="register-password"
+                    placeholder="Digite sua senha"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary"
+            >
+                Criar conta
+            </button>
+
+        </form>
+
+
+        <p class="auth-link">
+
+            Já possui uma conta?
+
+            <a
+                href="#"
+                id="show-login"
+            >
+                Fazer login
+            </a>
+
+        </p>
+
+    </section>
+
+</section>
+
+</div>
+
+<!-- ==========================
+     MODAL DE MENSAGEM
+=========================== -->
+
+<div
+    id="auth-modal"
+    class="modal"
+>
+
+<div class="modal-content">
+
+    <h3 id="auth-modal-title">
+        Mensagem
+    </h3>
+
+    <p id="auth-modal-message"></p>
+
+    <div class="modal-actions">
+
+        <button
+            id="auth-modal-ok"
+            class="btn btn-primary"
+        >
+            OK
+        </button>
+
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>

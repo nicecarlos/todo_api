@@ -1,15 +1,15 @@
 from flask import Blueprint, render_template
 
-# Blueprint das páginas web
-# __name__ informa ao Flask onde este Blueprint está localizado.
 web_bp = Blueprint("web", __name__)
 
-# Rota da página inicial.
+
+# Página inicial: login
 @web_bp.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("login.html")
 
-# Rota de tarefas
+
+# Página de tarefas
 @web_bp.route("/tasks")
 def tasks():
-    return {"message":"Lista de tarefas"}
+    return render_template("index.html")

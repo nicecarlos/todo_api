@@ -4,18 +4,24 @@ from models.task import Task
 class TaskRepository:
 
     @staticmethod
-    def get_all():
-        return Task.query.order_by(Task.created_at.desc()).all()
+    def get_all(user_id: int):
+        return Task.query.filter(Task.user_id == user_id).all()
 
     @staticmethod
     def get_by_id(task_id: int):
         return Task.query.get(task_id)
 
     @staticmethod
-    def create(title: str, description: str = None):
-        task = Task(title=title, description=description)
+    def create(title: str, description: str, user_id: int):
+        task = Task(
+            title=title,
+            description=description,
+            user_id=user_id
+        )
+
         db.session.add(task)
         db.session.commit()
+
         return task
 
     @staticmethod
